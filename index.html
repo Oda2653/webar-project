@@ -8,10 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/ar.js@1.7.2/aframe/build/aframe-ar.min.js"></script>
 </head>
 <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs fix-position="true">
-        <a-marker type="pattern" url="https://oda2653.github.io/webar-project/pattern-qr.patt" smooth="true">
-            <a-entity gltf-model="https://oda2653.github.io/webar-project/assets/model.glb" 
-                      scale="0.5 0.5 0.5" 
+    <a-scene embedded arjs="sourceType: webcam; detectionMode: mono; matrixCodeType: 3x3;" vr-mode-ui="enabled: false">
+        <a-marker type="pattern" url="https://oda2653.github.io/webar-project/pattern-qr.patt" 
+                  smooth="true" 
+                  smoothCount="10" 
+                  smoothTolerance=".01" 
+                  smoothThreshold="5">
+            <a-entity gltf-model="https://oda2653.github.io/webar-project/assets/model.glb"
+                      scale="0.1 0.1 0.1" 
                       position="0 0 0">
             </a-entity>
         </a-marker>
